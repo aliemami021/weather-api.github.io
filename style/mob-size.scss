@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.whole {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 40%;
+    max-width: 380px;
+    min-width: 350px;
+    height: 100vh;
+
+    .wrapper {
+        transform: translateY(-5%);
+        background: #1b1c49;
+        border-radius: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 60% 15%;
+        width: 90%;
+        height: 80vh;
+        min-height: 420px;
+        max-height: 550px;
+        padding: 15px;
+
+        &.sunny {
+            background-image: url('pics/sunny.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: moving;
+            animation-duration: 35s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        &.cloudy {
+            background-image: url('pics/cloudy.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: moving;
+            animation-duration: 15s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        &.partly-cloudy {
+            background-image: url('pics/partly-cloudy.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: moving;
+            animation-duration: 15s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        &.rainy {
+            background-image: url('pics/rainy-ver.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-name: moving;
+            animation-duration: 15s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+
+
+        header {
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+            grid-row: 1/2;
+            font-family: sans-serif;
+
+            .burger {
+                width: 30px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                ul {
+                    list-style: none;
+                    display: none;
+                }
+            }
+
+            .burger i {
+                font-size: 28px;
+                font-weight: 200;
+                color: white;
+            }
+
+            .slogan {
+                flex-basis: 100%;
+                height: 100%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span {
+                    border: 1px solid white;
+                    border-radius: 20px;
+                    padding: 3px 6px;
+                    box-shadow: .3px .3px 3px .1px black,
+                        .8px .8px .2px .2px inset black,
+                        .1px .1px 3px .01px white;
+                    text-shadow: 1px 1px 1px black;
+
+                }
+            }
+
+            .empty {
+                width: 40px;
+                height: 100%;
+                /* background-color: red; */
+            }
+        }
+
+        .box {
+            margin: auto;
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(46, 46, 74, 0.5);
+            position: relative;
+            grid-row: 2/3;
+            font-family: sans-serif;
+            font-weight: 100;
+
+            .search {
+                margin: auto;
+                position: absolute;
+                top: -60px;
+                left: 0;
+                width: 100%;
+                // padding: 10px;
+                // background-color: pink;
+            }
+
+            input {
+                font-family: sans-serif;
+                font-weight: 200;
+                font-size: 18px;
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .content {
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+
+                span {
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    color: white;
+
+                    &:nth-of-type(1) {
+                        grid-column: 4/-1;
+                        grid-row: 1/2;
+                    }
+
+                    &:nth-of-type(2) {
+                        grid-column: 3/5;
+                        grid-row: 2/5;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 10px;
+                    }
+
+                    &:nth-of-type(3) {
+                        grid-column: 5/-1;
+                        grid-row: 2/5;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-left: 10px;
+                    }
+
+                    &:nth-of-type(4) {
+                        grid-column: 1/-1;
+                        grid-row: 5/6;
+                    }
+                }
+
+                h3 {
+                    font-weight: 100;
+                    font-size: 28px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    color: white;
+
+                    &:nth-of-type(1) {
+                        grid-column: 1/4;
+                        font-size: 22px;
+                        grid-row: 1/2;
+                    }
+
+                    &:nth-of-type(2) {
+                        grid-column: 1/3;
+                        grid-row: 2/5;
+                    }
+
+                    img {
+                        width: 90px;
+                        height: 00px;
+                        background-color: rebeccapurple;
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 10px;
+
+            span {
+                font-family: sans-serif;
+                color: white;
+            }
+        }
+    }
+}
+
+@keyframes moving {
+    from {
+        background-position: 50% 0;
+    }
+
+    to {
+        background-position: 90% 30%;
+    }
+}
